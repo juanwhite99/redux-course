@@ -1,15 +1,14 @@
-import { Action } from "@ngrx/store";
-import { incrementar, decrementar } from './contador.actions';
+import { Action, createReducer, on } from "@ngrx/store";
+import { incrementar, decrementar, reset } from './contador.actions';
 
-export function contadorReducer(state: number = 20, action: Action): number {
-  switch(action.type){
-    case incrementar.type:
-      return state + 1;
+export const initialState = 10;
 
-    case decrementar.type:
-      return state - 1;
+const _counterReducer = createReducer(initialState,
+  on(incrementar, (state) => state + 1),
+  on(decrementar, (state) => state - 1),
+  on(reset, (state) => 0)
+);
 
-    default:
-      return state;
-  }
+export function contadorReducer(state: number | undefined, action: Action): number {
+  return _counterReducer(state, action);
 }
