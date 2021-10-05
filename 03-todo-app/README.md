@@ -14,3 +14,14 @@ Agregar Referencia al angular.json
     "node_modules/todomvc-app-css/index.css"
 ],
 ```
+
+# Componentes
+```shell
+npx ng g m todos/todo --flat
+npx ng g c todos/components/todo-add --skipTests
+npx ng g c todos/components/todo-footer --skipTests
+npx ng g c todos/components/todo-item --skipTests
+npx ng g c todos/components/todo-list --skipTests
+npx ng g c todos/components/todo-page --skipTests
+npx ng g c footer --skipTests
+```
