@@ -9,5 +9,12 @@ export {
   TodoFooterComponent,
   TodoItemComponent,
   TodoListComponent,
-  TodoPageComponent
+  TodoPageComponent,
 };
+
+export const todoComponentsArray = [
+  TodoAddComponent,
+  TodoFooterComponent,
+  TodoItemComponent,
+  TodoListComponent,
+];

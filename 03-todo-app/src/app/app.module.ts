@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 //NGRX
 import { StoreModule } from '@ngrx/store';
@@ -21,6 +22,7 @@ import { environment } from '../environments/environment.prod';
     BrowserModule,
     AppRoutingModule,
     TodoModule,
+    ReactiveFormsModule,
     StoreModule.forRoot({ todos: todoReducer }),
     StoreDevtoolsModule.instrument({
       maxAge: 15,

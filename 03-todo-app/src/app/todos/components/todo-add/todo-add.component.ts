@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { AppState } from '../../../app.reducer';
+import * as actions from '../../store/todo.actions';
 
 @Component({
   selector: 'app-todo-add',
@@ -6,10 +10,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo-add.component.sass']
 })
 export class TodoAddComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  txtInput: FormControl;
+  constructor(private store: Store<AppState>) {
+    this.txtInput = new FormControl('', [Validators.required])
   }
 
+  ngOnInit(): void {
+
+  }
+
+  addTodo(){
+    if(this.txtInput.invalid) { return; }
+    this.store.dispatch(actions.create({text: this.txtInput.value}));
+    this.txtInput.reset();
+  }
 }
