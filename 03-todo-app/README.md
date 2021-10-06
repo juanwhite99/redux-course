@@ -25,3 +25,10 @@ npx ng g c todos/components/todo-list --skipTests
 npx ng g c todos/components/todo-page --skipTests
 npx ng g c footer --skipTests
 ```
+
+# NGRX 
+https://ngrx.io/
+```
+npm install @ngrx/store --save
+npm install @ngrx/store-devtools --save
+```
