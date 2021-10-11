@@ -10,13 +10,14 @@ import { Todo } from '../../models/todo.model';
 })
 export class TodoListComponent implements OnInit {
   todos: Todo[] = [];
+  currentFilter: string = 'all';
+
   constructor(private store: Store<AppState>) { }
 
   ngOnInit(): void {
-    this.store
-    .select('todos')
-    .subscribe(todoState => {
-      this.todos = [...todoState];
+    this.store.subscribe(({todos, filter}) => {
+      this.todos = todos;
+      this.currentFilter = filter;
     });
   }
 

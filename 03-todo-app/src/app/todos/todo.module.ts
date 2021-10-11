@@ -4,11 +4,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 // Components
 import { todoComponentsArray, TodoPageComponent } from './components';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
     todoComponentsArray,
-    TodoPageComponent
+    TodoPageComponent,
+    FilterPipe
   ],
   imports: [
     CommonModule,
