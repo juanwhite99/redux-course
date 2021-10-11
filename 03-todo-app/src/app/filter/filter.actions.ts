@@ -6,3 +6,8 @@ export const setFilter = createAction(
   '[Filter] Set Filter',
   props<{filter: string}>()
 );
+
+export const changeFilter = createAction(
+  '[Filter] Change Filter',
+  props<{filter: string}>()
+);
